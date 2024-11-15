@@ -1,4 +1,4 @@
-package com.pdt.myidisii.ui.theme
+package com.pdt.myidisii.UI.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
