@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.dagger.hilt.android") version "2.48"
+    kotlin("kapt")
 }
 
 android {
@@ -11,6 +13,7 @@ android {
     defaultConfig {
         applicationId = "com.pdt.myidisii"
         minSdk = 24
+
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -60,6 +63,7 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.play.services.auth)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -72,6 +76,7 @@ dependencies {
     implementation(libs.ui)
     implementation(libs.androidx.material)
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.graphics.shapes)
     //retrofit
     implementation(libs.retrofit)
@@ -79,6 +84,9 @@ dependencies {
     //okhttp
     implementation(libs.okhttp)
     implementation(libs.logging.interceptor)
-    //data store untuk JWT Token dsb
-    implementation(libs.datastore.preferences)
+    //data store untuk JWT Token
+    implementation (libs.androidx.datastore.preferences.v100)
+    // Hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 }
